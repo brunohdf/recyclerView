@@ -16,7 +16,7 @@ class MainViewModel : ViewModel() {
         cal.set(Calendar.DAY_OF_MONTH, 1)
 
         val list = mutableListOf<Date>()
-        for (i in 0..10) {
+        for (i in 0..20) {
             list.add(cal.time.addDays(i))
         }
 
