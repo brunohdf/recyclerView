@@ -3,7 +3,7 @@ package com.brx.recyclerview.ui.main
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.helper.ItemTouchHelper
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.main_fragment.*
 import java.util.*
 
-// based on https://medium.com/@ipaulpro/drag-and-swipe-with-recyclerview-b9456d2b1aaf
+// based on https://medium.com/@ipaulpro/drag-and-swipe-with-recyclerview-6a6f0c422efd
 class MainFragment : Fragment() {
 
     companion object {
@@ -35,7 +35,7 @@ class MainFragment : Fragment() {
             val list = mutableListOf<Date>()
             val adapter = ListAdapter(ctx, list)
             recyclerView.adapter = adapter
-            recyclerView.layoutManager = LinearLayoutManager(activity)
+            recyclerView.layoutManager = GridLayoutManager(getActivity(), 3)
 
             val callback = TouchHelperCallback(adapter)
             val touchHelper = ItemTouchHelper(callback)
